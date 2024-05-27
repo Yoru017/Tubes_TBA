@@ -34,7 +34,7 @@ def tag_close_state(char, curr_tag):
 def recog(token):
     curr_state = "START"
     curr_tag = ""
-    acc_tags = ['html', 'head', 'body', 'title', 'h1', 'p', 'HTML', 'img']
+    acc_tags = ['html', 'head', 'body', 'title', 'h1', 'p', 'img']
 
     for char in token:
         if curr_state == "START":
@@ -57,9 +57,10 @@ def main():
     print("Masukkan token HTML (ketik 'exit' untuk keluar):")
     while True:
         token = input("Token: ")
+        tag = token.lower()
         if token.lower() == 'exit':
             break
-        result = recog(token)
+        result = recog(tag)
         print(f"Token: {token}, Result: {result}")
 
 if __name__ == "__main__":
