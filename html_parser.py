@@ -118,8 +118,6 @@ def parse_html(html):
         if not head_found and not body_found and not title_found:
             return "Accepted"
         # Accept if all necessary tags are found and properly nested
-        if head_found and body_found and title_found:
-            return "Accepted"
         if head_found or body_found:
             return "Accepted"
     
