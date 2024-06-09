@@ -48,7 +48,7 @@ def recog(token):
         elif curr_state == "END":
             break
 
-    if curr_state == "END" and (curr_tag in acc_tags or (curr_tag.startswith("/") and curr_tag[1:] in acc_tags)):
+    if curr_state == "END" and (curr_tag in acc_tags or (len(curr_tag) > 1 and curr_tag[0] == "/" and curr_tag[1:] in acc_tags)):
         return "ACCEPTED"
 
     return "REJECTED"
